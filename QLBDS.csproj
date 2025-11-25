@@ -1,0 +1,1030 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{690C4E2B-A2B4-45F6-A1CA-753CC7093D7B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QLBDS</RootNamespace>
+    <AssemblyName>MIPAO</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\FILESETUP\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Guna.UI2, Version=2.0.4.4, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.4\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing.Common, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Drawing.Common.7.0.0\lib\net462\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.9\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>packages\ZXing.Net.0.16.9\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DATASET.cs">
+      <DependentUpon>DATASET.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBconnect.cs" />
+    <Compile Include="DATASET.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DATASET.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBCNH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBCNH.Designer.cs">
+      <DependentUpon>FrmBCNH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMORONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMORONG.Designer.cs">
+      <DependentUpon>FrmMORONG.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmADDNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmADDNV.Designer.cs">
+      <DependentUpon>FrmADDNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBAN.Designer.cs">
+      <DependentUpon>FrmBAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBCBH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBCBH.Designer.cs">
+      <DependentUpon>FrmBCBH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCTCUS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCTCUS.Designer.cs">
+      <DependentUpon>FrmCTCUS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCTHDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCTHDB.Designer.cs">
+      <DependentUpon>FrmCTHDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCTHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCTHDN.Designer.cs">
+      <DependentUpon>FrmCTHDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCTNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCTNCC.Designer.cs">
+      <DependentUpon>FrmCTNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCTNHOMHH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCTNHOMHH.Designer.cs">
+      <DependentUpon>FrmCTNHOMHH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCTPRODUCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCTPRODUCT.Designer.cs">
+      <DependentUpon>FrmCTPRODUCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNHOMPD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNHOMPD.Designer.cs">
+      <DependentUpon>FrmNHOMPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHDBAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHDBAN.Designer.cs">
+      <DependentUpon>FrmHDBAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmHDNHAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHDNHAP.Designer.cs">
+      <DependentUpon>FrmHDNHAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCUS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCUS.Designer.cs">
+      <DependentUpon>FrmCUS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDASHBOARD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDASHBOARD.Designer.cs">
+      <DependentUpon>FrmDASHBOARD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEMPLOY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEMPLOY.Designer.cs">
+      <DependentUpon>FrmEMPLOY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFORGET1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFORGET1.Designer.cs">
+      <DependentUpon>FrmFORGET1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFORGET2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFORGET2.Designer.cs">
+      <DependentUpon>FrmFORGET2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFORGET3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFORGET3.Designer.cs">
+      <DependentUpon>FrmFORGET3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLISTKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLISTKH.Designer.cs">
+      <DependentUpon>FrmLISTKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLISTPD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLISTPD.Designer.cs">
+      <DependentUpon>FrmLISTPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLOGIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLOGIN.Designer.cs">
+      <DependentUpon>FrmLOGIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMAIN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMAIN.Designer.cs">
+      <DependentUpon>FrmMAIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNCC.Designer.cs">
+      <DependentUpon>FrmNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNHAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNHAP.Designer.cs">
+      <DependentUpon>FrmNHAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPRODUCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPRODUCT.Designer.cs">
+      <DependentUpon>FrmPRODUCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPDFRAME.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPDFRAME.Designer.cs">
+      <DependentUpon>FrmPDFRAME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPROFILE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPROFILE.Designer.cs">
+      <DependentUpon>FrmPROFILE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCTEMPLOY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCTEMPLOY.Designer.cs">
+      <DependentUpon>FrmCTEMPLOY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRECEIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRECEIP.Designer.cs">
+      <DependentUpon>FrmRECEIP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRPTBCTIME.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRPTBCTIME.Designer.cs">
+      <DependentUpon>FrmRPTBCTIME.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRPTCTHDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRPTCTHDB.Designer.cs">
+      <DependentUpon>FrmRPTCTHDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRPTCTHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRPTCTHDN.Designer.cs">
+      <DependentUpon>FrmRPTCTHDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRPTDSHDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRPTDSHDB.Designer.cs">
+      <DependentUpon>FrmRPTDSHDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRPTDSHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRPTDSHDN.Designer.cs">
+      <DependentUpon>FrmRPTDSHDN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRPTDSKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRPTDSKH.Designer.cs">
+      <DependentUpon>FrmRPTDSKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRPTDSNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRPTDSNCC.Designer.cs">
+      <DependentUpon>FrmRPTDSNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRPTDSNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRPTDSNV.Designer.cs">
+      <DependentUpon>FrmRPTDSNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRPTNHOMPD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRPTNHOMPD.Designer.cs">
+      <DependentUpon>FrmRPTNHOMPD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRPTPRODUCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRPTPRODUCT.Designer.cs">
+      <DependentUpon>FrmRPTPRODUCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTAODON.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTAODON.Designer.cs">
+      <DependentUpon>FrmTAODON.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTHANHTOAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTHANHTOAN.Designer.cs">
+      <DependentUpon>FrmTHANHTOAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWFBAOCAO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWFBAOCAO.Designer.cs">
+      <DependentUpon>FrmWFBAOCAO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmXDSHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmXDSHD.Designer.cs">
+      <DependentUpon>FrmXDSHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmXPRODUCT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmXPRODUCT.Designer.cs">
+      <DependentUpon>FrmXPRODUCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rptBCCUS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBCCUS.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCHD2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBCHD2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCEMP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBCEMP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCEMP2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBCEMP2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCHD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBCHD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCNCC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBCNCC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCPD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBCPD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCPD2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBCPD2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCTIME.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBCTIME.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptBCTIME2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptBCTIME2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptCTHDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCTHDB.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptCTHDN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptCTHDN.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDSHDBAN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDSHDBAN.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDSHDNHAP.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDSHDNHAP.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDSKH.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDSKH.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDSNCC.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDSNCC.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDSNHOMPD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDSNHOMPD.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDSNV.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDSNV.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="rptDSPRODUCT.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptDSPRODUCT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UCNHOMPD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCNHOMPD.Designer.cs">
+      <DependentUpon>UCNHOMPD.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FrmBCNH.resx">
+      <DependentUpon>FrmBCNH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMORONG.resx">
+      <DependentUpon>FrmMORONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmADDNV.resx">
+      <DependentUpon>FrmADDNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBCBH.resx">
+      <DependentUpon>FrmBCBH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCTCUS.resx">
+      <DependentUpon>FrmCTCUS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCTHDB.resx">
+      <DependentUpon>FrmCTHDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCTHDN.resx">
+      <DependentUpon>FrmCTHDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCTNCC.resx">
+      <DependentUpon>FrmCTNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCTNHOMHH.resx">
+      <DependentUpon>FrmCTNHOMHH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCTPRODUCT.resx">
+      <DependentUpon>FrmCTPRODUCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNHOMPD.resx">
+      <DependentUpon>FrmNHOMPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDASHBOARD.resx">
+      <DependentUpon>FrmDASHBOARD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBAN.resx">
+      <DependentUpon>FrmBAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHDBAN.resx">
+      <DependentUpon>FrmHDBAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHDNHAP.resx">
+      <DependentUpon>FrmHDNHAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCUS.resx">
+      <DependentUpon>FrmCUS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEMPLOY.resx">
+      <DependentUpon>FrmEMPLOY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFORGET1.resx">
+      <DependentUpon>FrmFORGET1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFORGET2.resx">
+      <DependentUpon>FrmFORGET2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFORGET3.resx">
+      <DependentUpon>FrmFORGET3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLISTKH.resx">
+      <DependentUpon>FrmLISTKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLISTPD.resx">
+      <DependentUpon>FrmLISTPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLOGIN.resx">
+      <DependentUpon>FrmLOGIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMAIN.resx">
+      <DependentUpon>FrmMAIN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNCC.resx">
+      <DependentUpon>FrmNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNHAP.resx">
+      <DependentUpon>FrmNHAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPRODUCT.resx">
+      <DependentUpon>FrmPRODUCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPDFRAME.resx">
+      <DependentUpon>FrmPDFRAME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPROFILE.resx">
+      <DependentUpon>FrmPROFILE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCTEMPLOY.resx">
+      <DependentUpon>FrmCTEMPLOY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRECEIP.resx">
+      <DependentUpon>FrmRECEIP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRPTBCTIME.resx">
+      <DependentUpon>FrmRPTBCTIME.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRPTCTHDB.resx">
+      <DependentUpon>FrmRPTCTHDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRPTCTHDN.resx">
+      <DependentUpon>FrmRPTCTHDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRPTDSHDB.resx">
+      <DependentUpon>FrmRPTDSHDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRPTDSHDN.resx">
+      <DependentUpon>FrmRPTDSHDN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRPTDSKH.resx">
+      <DependentUpon>FrmRPTDSKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRPTDSNCC.resx">
+      <DependentUpon>FrmRPTDSNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRPTDSNV.resx">
+      <DependentUpon>FrmRPTDSNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRPTNHOMPD.resx">
+      <DependentUpon>FrmRPTNHOMPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRPTPRODUCT.resx">
+      <DependentUpon>FrmRPTPRODUCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTHANHTOAN.resx">
+      <DependentUpon>FrmTHANHTOAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWFBAOCAO.resx">
+      <DependentUpon>FrmWFBAOCAO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmXDSHD.resx">
+      <DependentUpon>FrmXDSHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmXPRODUCT.resx">
+      <DependentUpon>FrmXPRODUCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="rptBCCUS.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBCCUS.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBCHD2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBCHD2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBCEMP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBCEMP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBCEMP2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBCEMP2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBCHD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBCHD.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBCNCC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBCNCC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBCPD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBCPD.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBCPD2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBCPD2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBCTIME.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBCTIME.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBCTIME2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptBCTIME2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCTHDB.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCTHDB.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCTHDN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptCTHDN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDSHDBAN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSHDBAN.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDSHDNHAP.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSHDNHAP.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDSKH.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSKH.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDSNCC.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSNCC.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDSNHOMPD.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSNHOMPD.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDSNV.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSNV.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDSPRODUCT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptDSPRODUCT.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCNHOMPD.resx">
+      <DependentUpon>UCNHOMPD.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="DATASET.xsc">
+      <DependentUpon>DATASET.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DATASET.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DATASET.xss">
+      <DependentUpon>DATASET.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Picture4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MIPAO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MIPAO %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homegrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homegreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homegreen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productgrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productgreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productgrey1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\productgreen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\donhanggreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\donhanggrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cusgrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cusgreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhanviengrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nhanviengreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accountgrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accountgreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thongkegrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thongkegreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picproduct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\290325378_165866672612690_4858064653043448184_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\277398324_1147589439148218_3741111093735257089_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helpgrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helpfreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2022-11-23 172031.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ADD1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CUS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\park.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amusement-park.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logomipao.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accountgrey1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setblack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setblack1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\category_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supplier_grey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\supplier_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addwhite1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backgreen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\amusement-park1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garbage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addpd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addpd1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garbage1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\d-tan-R0k7X8XR7Vk-unsplash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helpgrey1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\helpfreen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\donhanggrey1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\donhanggreen1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vegetable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garbage2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editblue1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editblue2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garbage3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editblue3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cashierwhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cashierwhite1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOSE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addwhite2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOSE1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CLOSE2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addwhite3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scangreen2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
